@@ -1,0 +1,36 @@
+﻿<Window x:Class="WPF_05_stylePhoto.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_05_stylePhoto"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="MyBackgroundButtonStyle">
+            <Setter Property="Control.Background" >
+                <Setter.Value>
+                    <ImageBrush TileMode="Tile" 
+                                Viewport="0 0 0.1 .1"
+                                ViewportUnits="RelativeToBoundingBox" 
+                                ImageSource="D:\Downloads\WPF_Styles\WPF_05_stylePhoto\happyface.jpg"></ImageBrush>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        <Button Height="47" 
+                Style="{StaticResource MyBackgroundButtonStyle}" Margin="0,0,461,0">
+            Button with style
+        </Button>
+        <Button Height="47" 
+                Style="{StaticResource MyBackgroundButtonStyle}" Margin="0,0,461,0">
+            Button with style
+        </Button>
+        <Button Height="47" 
+                Style="{StaticResource MyBackgroundButtonStyle}" Margin="0,0,461,0">
+            Button with style
+        </Button>
+    </StackPanel>
+</Window>

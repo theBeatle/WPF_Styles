@@ -1,0 +1,51 @@
+﻿<Window x:Class="WPF_Styles_02.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Styles_02"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <!--Name of style is MyButtonStyle-->
+        <Style x:Key="MyButtonStyle">
+            <Setter Property="Button.FontFamily" Value="Times New Roman" />
+            <Setter Property="Button.FontSize" Value="18" />
+            <Setter Property="Button.FontWeight" Value="Bold" />
+        </Style>
+        <Style x:Key="MyButtonStyle2">
+            <Setter Property="Button.Foreground" Value="OrangeRed" />
+            <Setter Property="Button.FontFamily" Value="Arial" />
+            <Setter Property="Button.FontSize" Value="24" />
+            <Setter Property="Button.FontWeight" Value="UltraBold" />
+            <Setter Property="Button.Margin" Value="50" />
+        </Style>
+    </Window.Resources>
+
+    <StackPanel Margin="5">
+        <Button Padding="5" 
+            Style="{StaticResource MyButtonStyle}">
+            Button with style
+        </Button>
+
+        <TextBlock Margin="5">Ordinary element</TextBlock>
+
+        <Button Padding="5" Margin="5">Ordinary button</Button>
+
+        <TextBlock Margin="5">Ordinary element</TextBlock>
+        
+
+        <Button Padding="5"  FontSize="30" Margin="5"
+            Style="{StaticResource MyButtonStyle2}">
+            Button with style
+        </Button>
+        <Button Padding="5"  FontSize="30" Margin="5"
+            Style="{StaticResource MyButtonStyle2}">
+            Button with style
+        </Button>
+        <Button Padding="5"  FontSize="30" Margin="5"
+            Style="{StaticResource MyButtonStyle2}">
+            Button with style
+        </Button>
+    </StackPanel>
+</Window>

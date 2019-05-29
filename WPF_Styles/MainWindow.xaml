@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPF_Styles.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_Styles"
+        xmlns:sys="clr-namespace:System;assembly=mscorlib"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+
+    <Window.Resources>
+        <FontFamily x:Key="myKey1">Times New Roman</FontFamily>
+        <sys:Double x:Key="myKey2">34</sys:Double>
+        <FontWeight x:Key="myKey3">Bold</FontWeight>
+    </Window.Resources>
+
+    <StackPanel Margin="5">
+
+        <Button Padding="5" Margin="5"
+            FontFamily="{StaticResource myKey1}"
+            FontWeight="{StaticResource myKey3}"
+            FontSize="{StaticResource myKey2}">
+            Button with settings
+        </Button>
+
+        <TextBlock Margin="5">Ordinary element</TextBlock>
+
+        <Button Padding="5" Margin="5">Ordinary element</Button>
+
+        <TextBlock Margin="5">Ordinary element</TextBlock>
+
+        <Button Padding="5" Margin="5"
+            FontFamily="{StaticResource myKey1}"
+            FontWeight="{StaticResource myKey3}"
+            FontSize="{StaticResource myKey2}">
+            Button with settings
+        </Button>
+
+    </StackPanel>
+</Window>

@@ -1,0 +1,40 @@
+﻿<Window x:Class="WPF_06_events.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WPF_06_events"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <Window.Resources>
+        <Style x:Key="MouseOverHighlightStyle">
+            <Setter Property="TextBlock.Padding" Value="5"/>
+            <EventSetter Event="FrameworkElement.MouseEnter" 
+                         Handler="Element_MouseEnter" />
+            <EventSetter Event="FrameworkElement.MouseLeave" 
+                         Handler="Element_MouseLeave" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BorderBrush" Value="White" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="Margin" Value="10"/>
+            <EventSetter Event="MouseEnter" 
+                         Handler="Element_MouseEnter" />
+            <EventSetter Event="MouseLeave" 
+                         Handler="Element_MouseLeave" />
+        </Style>
+    </Window.Resources>
+
+    <StackPanel>
+        
+        <TextBlock MouseEnter="Element_MouseEnter" MouseLeave="Element_MouseLeave">New Catch Me!</TextBlock>
+        <TextBlock Style="{StaticResource MouseOverHighlightStyle}">Catch Me!</TextBlock>
+        <TextBlock Style="{StaticResource MouseOverHighlightStyle}"
+                   Padding="5">Don't catch me!</TextBlock>
+        <TextBlock Style="{StaticResource MouseOverHighlightStyle}">Catch Me!</TextBlock>
+        <Label Style="{StaticResource MouseOverHighlightStyle}">Alloha!</Label>
+        <Button>First Button</Button>
+        <Button>Second Button</Button>
+        <Button>Third Button</Button>
+    </StackPanel>
+</Window>
